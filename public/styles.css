@@ -1,0 +1,132 @@
+body {
+  font-family: "DynaPuff", sans-serif;
+  background: url("assets/tama_wallpaper.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+.main-container {
+  background-color: #fff5e6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* critter styling */
+.critter-container {
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px auto;
+}
+
+.critter {
+  width: 32px;
+  height: 30px;
+  margin: 40px auto;
+  background-image: url("assets/tamagotchi_sprites.png");
+  background-repeat: no-repeat;
+  image-rendering: pixelated;
+}
+
+/* Neutral animation (frames 0-4) */
+.neutral {
+  animation: neutralAnim 0.8s steps(5) infinite;
+}
+
+/* Happy animation (frames 5-7) */
+.happy {
+  animation: happyAnim 0.8s steps(3) infinite;
+}
+
+/* Sad animation (frames 8-11) */
+.sad {
+  animation: sadAnim 0.8s steps(4) infinite;
+}
+
+@keyframes neutralAnim {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -160px 0;
+  } /* 5 frames * 32px width */
+}
+
+@keyframes happyAnim {
+  from {
+    background-position: -160px 0;
+  } /* Start after neutral frames */
+  to {
+    background-position: -256px 0;
+  } /* 3 frames * 32px width + neutral offset */
+}
+
+@keyframes sadAnim {
+  from {
+    background-position: -256px 0;
+  } /* Start after happy frames */
+  to {
+    background-position: -384px 0;
+  } /* 4 frames * 32px width + previous offsets */
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+button {
+  font-family: "Nunito", sans-serif;
+  padding: 10px 20px;
+  min-width: 80px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #4caf50;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* Progress bar styling from https://flowbite-react.com/docs/components/progress*/
+.progress-container {
+  width: 80%;
+  max-width: 400px;
+  margin: 20px auto;
+  background: #f0f0f0;
+  border-radius: 8px;
+  padding: 3px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.progress-bar {
+  position: relative;
+  height: 20px;
+  border-radius: 6px;
+  background: linear-gradient(
+    to right,
+    var(--bar-color) var(--progress),
+    transparent 0
+  );
+  transition: all 0.3s ease;
+}
+
+.progress-text {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: #333;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.8);
+}

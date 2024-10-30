@@ -1,0 +1,28 @@
+{
+    "interactions": [
+        {
+            "action": "feed",
+            "timestamp": 1730250381455,
+            "moodBefore": 70,
+            "moodAfter": 80
+        },
+        {
+            "action": "gift",
+            "timestamp": 1730250378737,
+            "moodBefore": 55,
+            "moodAfter": 70
+        },
+        {
+            "action": "pet",
+            "timestamp": 1730250376786,
+            "moodBefore": 50,
+            "moodAfter": 55
+        },
+        {
+            "action": "feed",
+            "timestamp": 1730250646821,
+            "moodBefore": 75.67473333333332,
+            "moodAfter": 85.67473333333332
+        }
+    ]
+}
